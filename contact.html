@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Urban Brew - Cafe Near Me in Delhi</title>
+    <meta name="description" content="Get in touch with Urban Brew. Find the best affordable cafe near me in Delhi. We are located in North Campus and open for students everyday.">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--color-white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-secondary);
+            border-radius: 6px;
+            font-family: var(--font-body);
+        }
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+        .contact-card {
+            background: var(--color-white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="padding: 10px 0;"><img src="images/logo.png" alt="Urban Brew Cafe Logo" style="height: 70px; width: auto;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="section bg-secondary">
+            <div class="container text-center">
+                <h1 class="section-title">Contact Us</h1>
+                <p class="section-subtitle">Often searching for a great <strong>cafe near me</strong>? You've found the best affordable cafe near you! We are centrally located in Delhi.</p>
+                <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200" alt="Urban Brew Cafe Location in Delhi" style="width: 100%; max-height: 600px; object-fit: cover; border-radius: 12px; margin-bottom: 40px; box-shadow: var(--shadow-sm);">
+                <div class="contact-info-grid">
+                    <div class="contact-card">
+                        <div class="feature-icon" style="margin-bottom: 15px;">📍</div>
+                        <h3 style="margin-bottom: 10px;">Our Address</h3>
+                        <p style="color: var(--color-gray);">Student Hub, North Campus<br>New Delhi, India 110007</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="feature-icon" style="margin-bottom: 15px;">📞</div>
+                        <h3 style="margin-bottom: 10px;">Call Us</h3>
+                        <p style="color: var(--color-gray);">+91 98765 43210<br>Available 10 AM - 10 PM</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="feature-icon" style="margin-bottom: 15px;">✉️</div>
+                        <h3 style="margin-bottom: 10px;">Email</h3>
+                        <p style="color: var(--color-gray);">hello@urbanbrew.in<br>For group bookings & events</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="feature-icon" style="margin-bottom: 15px;">📷</div>
+                        <h3 style="margin-bottom: 10px;">Instagram</h3>
+                        <p style="color: var(--color-gray);"><a href="https://www.instagram.com/urban_brew_caffe/" target="_blank" style="color: var(--color-accent); font-weight: 600;">@urban_brew_caffe</a><br>Follow for updates & aesthetics</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2 style="margin-bottom: 20px; font-family: var(--font-heading);">Send us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Urban Brew Café</h4>
+                    <p>A welcoming space in Delhi for students and young professionals.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit Us</h4>
+                    <ul class="footer-links">
+                        <li>📍 New Delhi, India</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="https://www.instagram.com/urban_brew_caffe/" target="_blank">📷 Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Urban Brew Café. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
