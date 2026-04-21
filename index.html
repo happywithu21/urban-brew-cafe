@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,24 +6,170 @@
     <title>Affordable Cafe in Delhi | Urban Brew Café for Students & Professionals</title>
     <meta name="description" content="Urban Brew Café is your go-to affordable cafe in Delhi. A cozy, modern space for students and young professionals to study, relax, and grab a budget-friendly bite.">
     <meta name="referrer" content="no-referrer">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <style>
+        /* ── Blog Card Link Wrapper ── */
+        .blog-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;          /* stretch to match sibling height */
+        }
+        .blog-card-link .feature-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        /* Inner content area grows to fill card, pushing button down */
+        .blog-card-link .feature-card > div {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .blog-card-link .feature-card > div p {
+            flex: 1;                /* paragraph takes remaining space */
+        }
+        .blog-card-link .feature-card > div .btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        .blog-card-link:hover .feature-card {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+        }
+        .blog-card-link:hover .feature-card img {
+            filter: brightness(0.95);
+        }
+        /* ── Contact Info Cards (shared with contact.html) ── */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 40px 0 50px;
+        }
+        @media (max-width: 900px) {
+            .contact-info-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 520px) {
+            .contact-info-grid { grid-template-columns: 1fr; }
+        }
+        .contact-card {
+            background: var(--color-white);
+            padding: 32px 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+        }
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .contact-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--color-primary);
+        }
+        .contact-card p {
+            font-size: 0.88rem;
+            color: var(--color-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--color-white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-secondary);
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--color-accent);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="images/logo.png" alt="Urban Brew Café Logo" style="height: 60px; width: auto; display: block;"></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn">☰</button>
+                <header class="new-header">
+        <div class="top-announcement-bar">
+            <div class="container top-bar-container">
+                <div class="top-socials">
+                    <a href="#" class="social-icon" title="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/urban_brew_caffe/" class="social-icon" target="_blank" title="Instagram"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="#" class="social-icon" title="Twitter"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                </div>
+                <div class="top-announcement">ORDER BY MIDDAY FOR NEXT DAY DISPATCH OR COLLECTION</div>
+                <div class="top-spacer"></div>
+            </div>
+        </div>
+        <div class="main-header-area">
+            <div class="container">
+                <div class="header-top-row">
+                    <a href="index.html" class="logo">URBAN BREW</a>
+                    <div class="header-actions">
+                        <a href="#" class="header-btn-outline">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg> 
+                            Account
+                        </a>
+                        <a href="#" class="header-btn-solid">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                            £0.00 (0)
+                        </a>
+                    </div>
+                </div>
+                <nav class="header-nav-row">
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-page="index.html" class="active">Home</a></li>
+                        <li><a href="about.html" data-page="about.html">About Us</a></li>
+                        <li><a href="menu.html" data-page="menu.html">Menu</a></li>
+                        <li><a href="blog.html" data-page="blog.html">Blog</a></li>
+                        <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu">&#9776;</button>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main>
+<main>
         <section class="hero">
             <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1600" alt="Interior of an affordable cafe in Delhi" class="hero-bg">
             <div class="hero-overlay"></div>
@@ -206,25 +352,29 @@
                 </div>
                 
                 <div class="features-grid">
-                    <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1521017430205-959ba5f7d3d2?auto=format&fit=crop&q=80&w=600" alt="Friends hanging out at cafe" style="width: 100%; height: 200px; object-fit: cover;">
-                        <div style="padding: 40px;">
-                            <span style="display: block; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">16 April 2026</span>
-                            <h3 style="font-size: 1.5rem; line-height: 1.3;"><a href="blog1.html">Why We Built the Best Affordable Cafe in Delhi for Friends</a></h3>
-                            <p style="color: var(--color-gray); margin-bottom: 24px; font-size: 1.1rem;">Finding a place for group project meetings that won't empty your wallet is hard. We explore what makes a great hangout spot...</p>
-                            <a href="blog1.html" class="btn btn-secondary" style="padding: 10px 24px; font-size: 1rem;">Read More</a>
+                    <a href="blog1.html" class="blog-card-link">
+                        <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600" alt="Friends hanging out at cafe" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="padding: 40px;">
+                                <span style="display: block; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">16 April 2026</span>
+                                <h3 style="font-size: 1.5rem; line-height: 1.3;">Why We Built the Best Affordable Cafe in Delhi for Friends</h3>
+                                <p style="color: var(--color-gray); margin-bottom: 24px; font-size: 1.1rem;">Finding a place for group project meetings that won't empty your wallet is hard. We explore what makes a great hangout spot...</p>
+                                <span class="btn btn-secondary" style="padding: 10px 24px; font-size: 1rem; display: inline-block;">Read More</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=600" alt="Artisan coffee on table" style="width: 100%; height: 200px; object-fit: cover;">
-                        <div style="padding: 40px;">
-                            <span style="display: block; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">20 April 2026</span>
-                            <h3 style="font-size: 1.5rem; line-height: 1.3;"><a href="blog2.html">How to Spot the Most Affordable Cafe in Delhi Without Sacrificing Vibe</a></h3>
-                            <p style="color: var(--color-gray); margin-bottom: 24px; font-size: 1.1rem;">Delhi is full of cafes, but very few hit the sweet spot between an aesthetic interior and student-friendly pricing. Here's a student guide...</p>
-                            <a href="blog2.html" class="btn btn-secondary" style="padding: 10px 24px; font-size: 1rem;">Read More</a>
+                    <a href="blog2.html" class="blog-card-link">
+                        <div class="feature-card" style="text-align: left; padding: 0; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=600" alt="Artisan coffee on table" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="padding: 40px;">
+                                <span style="display: block; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">20 April 2026</span>
+                                <h3 style="font-size: 1.5rem; line-height: 1.3;">How to Spot the Most Affordable Cafe in Delhi Without Sacrificing Vibe</h3>
+                                <p style="color: var(--color-gray); margin-bottom: 24px; font-size: 1.1rem;">Delhi is full of cafes, but very few hit the sweet spot between an aesthetic interior and student-friendly pricing. Here's a student guide...</p>
+                                <span class="btn btn-secondary" style="padding: 10px 24px; font-size: 1rem; display: inline-block;">Read More</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -237,44 +387,34 @@
                 <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200" alt="Urban Brew Cafe Location in Delhi" style="width: 100%; max-height: 600px; object-fit: cover; border-radius: 12px; margin-bottom: 40px; box-shadow: var(--shadow-sm);">
                 <div class="contact-info-grid">
                     <div class="contact-card">
-                        <div class="feature-icon" style="margin-bottom: 15px;">📍</div>
-                        <h3 style="margin-bottom: 10px;">Our Address</h3>
-                        <p style="color: var(--color-gray);">Student Hub, North Campus<br>New Delhi, India 110007</p>
+                        <div class="contact-card-icon">📍</div>
+                        <h3>Our Address</h3>
+                        <p>Student Hub, North Campus<br>New Delhi, India 110007</p>
                     </div>
                     <div class="contact-card">
-                        <div class="feature-icon" style="margin-bottom: 15px;">📞</div>
-                        <h3 style="margin-bottom: 10px;">Call Us</h3>
-                        <p style="color: var(--color-gray);">+91 98765 43210<br>Available 10 AM - 10 PM</p>
+                        <div class="contact-card-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>+91 98765 43210<br>Available 10 AM – 10 PM</p>
                     </div>
                     <div class="contact-card">
-                        <div class="feature-icon" style="margin-bottom: 15px;">✉️</div>
-                        <h3 style="margin-bottom: 10px;">Email</h3>
-                        <p style="color: var(--color-gray);">hello@urbanbrew.in<br>For group bookings & events</p>
+                        <div class="contact-card-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>hello@urbanbrew.in<br>For group bookings &amp; events</p>
                     </div>
                     <div class="contact-card">
-                        <div class="feature-icon" style="margin-bottom: 15px;">📷</div>
-                        <h3 style="margin-bottom: 10px;">Instagram</h3>
-                        <p style="color: var(--color-gray);"><a href="https://www.instagram.com/urban_brew_caffe/" target="_blank" style="color: var(--color-accent); font-weight: 600;">@urban_brew_caffe</a><br>Follow for updates & aesthetics</p>
+                        <div class="contact-card-icon">📷</div>
+                        <h3>Instagram</h3>
+                        <p><a href="https://www.instagram.com/urban_brew_caffe/" target="_blank" style="color: var(--color-accent); font-weight: 600;">@urban_brew_caffe</a><br>Follow for updates &amp; aesthetics</p>
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <h2 style="margin-bottom: 20px; font-family: var(--font-heading);">Send us a Message</h2>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div class="newsletter-block">
+                    <h2>Join the Flavours of our Community</h2>
+                    <form action="#" method="POST" class="newsletter-form-wrapper">
+                        <input type="email" name="email" required placeholder="Enter your email">
+                        <button type="submit">Submit</button>
                     </form>
+                    <p>Receive exclusive updates, offers, and a slice of our vibrant community delivered straight to your inbox.</p>
                 </div>
             </div>
         </section>
@@ -283,35 +423,82 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Urban Brew Café</h4>
-                    <p>A welcoming space in Delhi for students and young professionals.</p>
+                <!-- Logo Column -->
+                <div class="footer-logo-col">
+                    <div>
+                        <div class="footer-logo-circle">
+                            <img src="images/logo.png" alt="Urban Brew Café Logo">
+                        </div>
+                        <div class="footer-logo-text" style="margin-top: 16px;">
+                            <h3>Urban Brew Café</h3>
+                            <p>Delhi's cozy café for students</p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Location & Hours Column -->
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
+                    <h4>Location &amp; Hours</h4>
+                    <p><strong>Visit Us</strong></p>
+                    <p>Student Hub, North Campus<br>New Delhi, India 110007</p>
+                    <p>📞 +91 98765 43210</p>
+                    <div class="footer-divider"></div>
+                    <p><strong>Store Hours</strong></p>
+                    <p><strong style="color:#fff;">Mon – Fri:</strong> 8:00 AM – 10:00 PM</p>
+                    <p><strong style="color:#fff;">Sat – Sun:</strong> 9:00 AM – 11:00 PM</p>
+                    <!-- Social Icons -->
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/urban_brew_caffe/" target="_blank" title="Instagram">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" title="Facebook">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" title="Twitter / X">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- More Information Column -->
                 <div class="footer-col">
-                    <h4>Visit Us</h4>
+                    <h4>More Information</h4>
                     <ul class="footer-links">
-                        <li>📍 New Delhi, India</li>
-                        <li>📞 +91 98765 43210</li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="blog.html">Our Blog</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="https://www.instagram.com/urban_brew_caffe/" target="_blank">📷 Instagram</a></li>
+                        <li><a href="index.html">Home</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; <span id="year"></span> Urban Brew Café. All rights reserved.
             </div>
         </div>
+        <div class="footer-bottom">
+            &copy; <span id="year"></span> Urban Brew Café. All rights reserved. &nbsp;|&nbsp; New Delhi, India
+        </div>
     </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        &#8679;
+    </button>
+
     <script src="js/script.js"></script>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Scroll-to-top visibility
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.scrollY > 400);
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
