@@ -17,15 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(mobileBtn) {
         mobileBtn.addEventListener('click', () => {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-            navMenu.style.flexDirection = 'column';
-            navMenu.style.position = 'absolute';
-            navMenu.style.top = '100%';
-            navMenu.style.left = '0';
-            navMenu.style.width = '100%';
-            navMenu.style.background = '#2a2a2a';
-            navMenu.style.padding = '20px';
-            navMenu.style.zIndex = '1000';
+            navMenu.classList.toggle('active');
         });
     }
 });
