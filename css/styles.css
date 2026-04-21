@@ -763,12 +763,32 @@ footer {
   }
   .mobile-menu-btn {
     display: block;
+    margin-left: auto;
+  }
+  .top-announcement-bar {
+    display: none; /* Hide announcement bar on small screens to save space */
+  }
+  .header-top-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2.5rem;
   }
   .hero h1 {
     font-size: 3rem;
   }
   .hero-overlay {
-    background: rgba(32, 21, 19, 0.7); /* Solid dark overlay on mobile for white text readability */
+    background: rgba(32, 21, 19, 0.7);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .footer-logo-col {
+    justify-content: center;
   }
 }
 
